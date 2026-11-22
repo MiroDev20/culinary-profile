@@ -14,11 +14,21 @@
             content="Aprende a cocinar con Nicolás Herrera: recetas accesibles, técnicas prácticas y retos culinarios para perderle el miedo a la cocina."
         >
         <title>Nico en la Cocina — Recetas, técnicas y retos culinarios</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <main class="profile-page">
+        <main class="page">
             <!-- Profile -->
             <header class="profile">
+                <div class="profile__copy">
+                    <h1 class="profile__name">Nico en la Cocina</h1>
+                    <p class="profile__author">Nicolás Herrera</p>
+                    <p class="profile__bio">
+                        Estudiante de gastronomía aprendiendo una receta a la vez.
+                        Técnicas, experimentos y retos para cocinar mejor sin complicarse.
+                    </p>
+                    <p class="profile__invitation">¡Vamos a cocinar algo!</p>
+                </div>
                 <img
                     class="profile__image"
                     src="assets/images/profile/profile-picture.png"
@@ -26,58 +36,54 @@
                     width="1254"
                     height="1254"
                 >
-                <h1 class="profile__name">Nico en la Cocina</h1>
-                <p class="profile__author">Nicolás Herrera</p>
-                <p class="profile__bio">
-                    Estudiante de gastronomía aprendiendo una receta a la vez.
-                    Técnicas, experimentos y retos para cocinar mejor sin complicarse.
-                </p>
-                <p class="profile__call-to-action">¡Vamos a cocinar algo!</p>
             </header>
 
             <!-- Links -->
-            <nav class="links" aria-label="Enlaces de Nico en la Cocina">
+            <nav class="links" aria-labelledby="links-title">
+                <div class="section-heading">
+                    <h2 class="section-heading__title" id="links-title">Encuéntrame aquí</h2>
+                </div>
                 <ul class="links__list">
                     <li class="links__item">
                         <a class="links__link" href="#">
                             <img class="links__icon" src="assets/icons/tiktok-color.svg" alt="TikTok" width="24" height="24">
                             <span class="links__label">Recetas rápidas y trucos de cocina</span>
-                            <img class="links__action" src="assets/icons/arrow-up-right-stroke.svg" alt="" width="24" height="24">
+                            <img class="links__arrow" src="assets/icons/arrow-up-right-stroke.svg" alt="" width="24" height="24">
                         </a>
                     </li>
                     <li class="links__item">
                         <a class="links__link" href="#">
                             <img class="links__icon" src="assets/icons/instagram-color.svg" alt="Instagram" width="24" height="24">
                             <span class="links__label">Un vistazo a mi cocina</span>
-                            <img class="links__action" src="assets/icons/arrow-up-right-stroke.svg" alt="" width="24" height="24">
+                            <img class="links__arrow" src="assets/icons/arrow-up-right-stroke.svg" alt="" width="24" height="24">
                         </a>
                     </li>
                     <li class="links__item">
                         <a class="links__link" href="#">
                             <img class="links__icon" src="assets/icons/youtube-color.svg" alt="YouTube" width="24" height="24">
                             <span class="links__label">Cocina junto a Nico</span>
-                            <img class="links__action" src="assets/icons/arrow-up-right-stroke.svg" alt="" width="24" height="24">
+                            <img class="links__arrow" src="assets/icons/arrow-up-right-stroke.svg" alt="" width="24" height="24">
                         </a>
                     </li>
                     <li class="links__item">
                         <a class="links__link" href="#">
                             <img class="links__icon" src="assets/icons/pinterest-color.svg" alt="Pinterest" width="24" height="24">
                             <span class="links__label">Ideas para recetas</span>
-                            <img class="links__action" src="assets/icons/arrow-up-right-stroke.svg" alt="" width="24" height="24">
+                            <img class="links__arrow" src="assets/icons/arrow-up-right-stroke.svg" alt="" width="24" height="24">
                         </a>
                     </li>
                     <li class="links__item">
                         <a class="links__link" href="#">
                             <img class="links__icon" src="assets/icons/cookpad-color.svg" alt="Cookpad" width="24" height="24">
                             <span class="links__label">Recetas hechas para probar</span>
-                            <img class="links__action" src="assets/icons/arrow-up-right-stroke.svg" alt="" width="24" height="24">
+                            <img class="links__arrow" src="assets/icons/arrow-up-right-stroke.svg" alt="" width="24" height="24">
                         </a>
                     </li>
                     <li class="links__item">
                         <a class="links__link" href="#">
                             <img class="links__icon" src="assets/icons/envelope-color.svg" alt="Colaboraciones" width="24" height="24">
                             <span class="links__label">Propuestas y demostraciones culinarias</span>
-                            <img class="links__action" src="assets/icons/arrow-up-right-stroke.svg" alt="" width="24" height="24">
+                            <img class="links__arrow" src="assets/icons/arrow-up-right-stroke.svg" alt="" width="24" height="24">
                         </a>
                     </li>
                 </ul>
@@ -85,66 +91,79 @@
 
             <!-- Featured content -->
             <section class="featured" aria-labelledby="featured-title">
-                <h2 class="featured__heading" id="featured-title">Contenido destacado</h2>
+                <div class="section-heading">
+                    <h2 class="section-heading__title" id="featured-title">Contenido destacado</h2>
+                </div>
+                <div class="featured__grid">
+                    <article class="story story--lead">
+                        <img
+                            class="story__image"
+                            src="assets/images/dishes/pasta-cremosa-con-champinones-y-parmesano.png"
+                            alt="Plato de pasta cremosa con champiñones y parmesano"
+                            width="1536"
+                            height="1024"
+                            loading="lazy"
+                        >
+                        <div class="story__copy">
+                            <h3 class="story__title">Receta de la semana</h3>
+                            <p class="story__description">Pasta cremosa con ajo, champiñones y parmesano.</p>
+                        </div>
+                    </article>
 
-                <article class="featured__item">
-                    <h3 class="featured__title">Receta de la semana</h3>
-                    <img
-                        class="featured__image"
-                        src="assets/images/dishes/pasta-cremosa-con-champinones-y-parmesano.png"
-                        alt="Plato de pasta cremosa con champiñones y parmesano"
-                        width="288"
-                        height="192"
-                        loading="lazy"
-                    >
-                    <p class="featured__description">Pasta cremosa con ajo, champiñones y parmesano.</p>
-                </article>
+                    <article class="story">
+                        <img
+                            class="story__image"
+                            src="assets/images/dishes/guia-visual-para-sellar-un-filete-perfecto.png"
+                            alt="Filete sellado en una sartén y pasos para prepararlo"
+                            width="1536"
+                            height="1024"
+                            loading="lazy"
+                        >
+                        <div class="story__copy">
+                            <h3 class="story__title">Técnica destacada</h3>
+                            <p class="story__description">
+                                Cómo conseguir un buen sellado en una sartén sin cocer la carne al vapor.
+                            </p>
+                        </div>
+                    </article>
 
-                <article class="featured__item">
-                    <h3 class="featured__title">Técnica destacada</h3>
-                    <img
-                        class="featured__image"
-                        src="assets/images/dishes/guia-visual-para-sellar-un-filete-perfecto.png"
-                        alt="Filete sellado en una sartén y pasos para prepararlo"
-                        width="288"
-                        height="192"
-                        loading="lazy"
-                    >
-                    <p class="featured__description">
-                        Cómo conseguir un buen sellado en una sartén sin cocer la carne al vapor.
-                    </p>
-                </article>
+                    <article class="story">
+                        <img
+                            class="story__image"
+                            src="assets/images/dishes/collage-de-cinco-comidas-caseras-economicas.png"
+                            alt="Collage de cinco comidas caseras"
+                            width="1536"
+                            height="1024"
+                            loading="lazy"
+                        >
+                        <div class="story__copy">
+                            <h3 class="story__title">Reto actual</h3>
+                            <p class="story__description">
+                                Preparar cinco platos diferentes con un presupuesto limitado.
+                            </p>
+                        </div>
+                    </article>
 
-                <article class="featured__item">
-                    <h3 class="featured__title">Reto actual</h3>
-                    <img
-                        class="featured__image"
-                        src="assets/images/dishes/collage-de-cinco-comidas-caseras-economicas.png"
-                        alt="Collage de cinco comidas caseras"
-                        width="288"
-                        height="192"
-                        loading="lazy"
-                    >
-                    <p class="featured__description">
-                        Preparar cinco platos diferentes con un presupuesto limitado.
-                    </p>
-                </article>
-
-                <article class="featured__item">
-                    <h3 class="featured__title">Logro personal</h3>
-                    <img
-                        class="featured__image"
-                        src="assets/images/dishes/pasta-cremosa-con-ajo-y-champinones.png"
-                        alt="Plato de pasta cremosa con ajo y champiñones"
-                        width="288"
-                        height="192"
-                        loading="lazy"
-                    >
-                    <p class="featured__description">
-                        Primera receta conseguida correctamente después de varios intentos.
-                    </p>
-                </article>
+                    <article class="story story--achievement">
+                        <img
+                            class="story__image"
+                            src="assets/images/dishes/pasta-cremosa-con-ajo-y-champinones.png"
+                            alt="Plato de pasta cremosa con ajo y champiñones"
+                            width="1536"
+                            height="1024"
+                            loading="lazy"
+                        >
+                        <div class="story__copy">
+                            <h3 class="story__title">Logro personal</h3>
+                            <p class="story__description">
+                                Primera receta conseguida correctamente después de varios intentos.
+                            </p>
+                        </div>
+                    </article>
+                </div>
             </section>
+
+            <footer class="footer">Nico en la Cocina</footer>
         </main>
     </body>
 </html>

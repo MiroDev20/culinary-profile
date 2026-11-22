@@ -1,0 +1,317 @@
+/* ==========================================================================
+   FONTS
+   ========================================================================== */
+
+@font-face {
+    font-family: "DM Sans";
+    src: url("public/fonts/DM_Sans/DMSans-VariableFont_opsz,wght.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DM Serif Display";
+    src: url("public/fonts/DM_Serif_Display/DMSerifDisplay-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+
+:root {
+    color-scheme: light;
+
+    --color-background: #f3ebd8;
+    --color-text: #292b27;
+    --color-olive: #4b5c35;
+    --color-sage: #dce1cb;
+    --color-tomato: #b83226;
+    --color-line: #bcbca7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family: "DM Sans", Arial, sans-serif;
+    line-height: 1.5;
+    color: var(--color-text);
+
+    background: var(--color-background);
+}
+
+::selection {
+    color: #fff;
+
+    background: var(--color-olive);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.page {
+    width: min(100% - 2.5rem, 72rem);
+    margin-inline: auto;
+}
+
+/* ==========================================================================
+   PROFILE
+   ========================================================================== */
+
+.profile {
+    display: grid;
+    gap: 2rem;
+    padding-block: 3rem 3.5rem;
+}
+
+.profile__copy {
+    max-width: 38rem;
+}
+
+.profile__name {
+    max-width: 9ch;
+    margin: 0;
+
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: clamp(3.6rem, 13vw, 6rem);
+    font-weight: 400;
+    line-height: 0.96;
+    letter-spacing: -0.035em;
+}
+
+.profile__author {
+    margin: 1.25rem 0 0;
+
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-olive);
+}
+
+.profile__bio {
+    max-width: 32rem;
+    margin: 1.5rem 0 0;
+
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.65;
+}
+
+.profile__invitation {
+    margin: 1.5rem 0 0;
+
+    font-weight: 700;
+    color: var(--color-tomato);
+}
+
+.profile__image {
+    width: min(65%, 17rem);
+    height: auto;
+    margin-left: auto;
+
+    border-radius: 12rem 12rem 1rem 1rem;
+}
+
+/* ==========================================================================
+   LINKS
+   ========================================================================== */
+
+.links,
+.featured {
+    padding-block: 2.75rem;
+
+    border-top: 1px solid var(--color-line);
+}
+
+.section-heading__title {
+    margin: 0 0 1.5rem;
+
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.links__list {
+    display: grid;
+    gap: 0 2rem;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.links__item {
+    border-bottom: 1px solid var(--color-line);
+}
+
+.links__link {
+    display: grid;
+    grid-template-columns: 1.5rem minmax(0, 1fr) 1.5rem;
+    align-items: center;
+    gap: 1rem;
+    min-height: 4.5rem;
+    padding: 1rem 0.5rem;
+
+    font-weight: 600;
+    color: inherit;
+    text-decoration: none;
+
+    transition: background-color 160ms ease-out;
+}
+
+.links__link:focus-visible {
+    outline: 3px solid var(--color-olive);
+    outline-offset: 3px;
+}
+
+.links__icon,
+.links__arrow {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.links__arrow {
+    transition: transform 160ms ease-out;
+}
+
+/* ==========================================================================
+   FEATURED CONTENT
+   ========================================================================== */
+
+.featured__grid {
+    display: grid;
+    gap: 2.5rem;
+}
+
+.story__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+
+    border-radius: 0.75rem;
+}
+
+.story__copy {
+    padding-top: 1rem;
+}
+
+.story__title {
+    margin: 0;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-olive);
+}
+
+.story__description {
+    max-width: 38rem;
+    margin: 0.5rem 0 0;
+
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: clamp(1.45rem, 3vw, 1.9rem);
+    line-height: 1.25;
+}
+
+.story--achievement {
+    padding: 1rem;
+
+    background: var(--color-sage);
+    border-radius: 0.75rem;
+}
+
+.footer {
+    padding-block: 2rem 3rem;
+
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 1.2rem;
+    color: var(--color-olive);
+
+    border-top: 1px solid var(--color-line);
+}
+
+/* ==========================================================================
+   INTERACTION AND RESPONSIVE
+   ========================================================================== */
+
+@media (hover: hover) {
+    .links__link:hover {
+        background: var(--color-sage);
+    }
+
+    .links__link:hover .links__arrow {
+        transform: translate(0.125rem, -0.125rem);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .links__link,
+    .links__arrow {
+        transition: none;
+    }
+
+    .links__link:hover .links__arrow {
+        transform: none;
+    }
+}
+
+@media (min-width: 48rem) {
+    .profile {
+        grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.65fr);
+        align-items: end;
+        gap: 4rem;
+        padding-block: 5rem 6rem;
+    }
+
+    .profile__image {
+        width: 100%;
+    }
+
+    .links,
+    .featured {
+        padding-block: 4rem;
+    }
+
+    .links__list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .featured__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
+        gap: 4rem 2rem;
+    }
+
+    .story--lead {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+        align-items: end;
+        gap: 2rem;
+    }
+
+    .story--lead .story__copy {
+        padding: 0 0 1rem;
+    }
+
+    .story--achievement {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+        align-items: center;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
+    .story--achievement .story__copy {
+        padding: 0;
+    }
+}
