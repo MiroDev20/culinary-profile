@@ -15,14 +15,15 @@
         >
         <title>Nico en la Cocina — Recetas, técnicas y retos culinarios</title>
         <link rel="stylesheet" href="styles.css">
+        <script src="script.js" defer></script>
     </head>
     <body>
         <main class="page">
             <!-- Profile -->
             <header class="profile">
                 <div class="profile__copy">
-                    <h1 class="profile__name">Nico en la Cocina</h1>
-                    <p class="profile__author">Nicolás Herrera</p>
+                    <h1 class="profile__name">Nicolás Herrera</h1>
+                    <p class="profile__author">Nico en la Cocina</p>
                     <p class="profile__bio">
                         Estudiante de gastronomía aprendiendo una receta a la vez.
                         Técnicas, experimentos y retos para cocinar mejor sin complicarse.
@@ -31,10 +32,10 @@
                 </div>
                 <img
                     class="profile__image"
-                    src="assets/images/profile/profile-picture.png"
+                    src="assets/images/profile/profile-cutout.png"
                     alt="Nicolás Herrera"
-                    width="1254"
-                    height="1254"
+                    width="811"
+                    height="1247"
                 >
             </header>
 
@@ -107,6 +108,7 @@
                         <div class="story__copy">
                             <h3 class="story__title">Receta de la semana</h3>
                             <p class="story__description">Pasta cremosa con ajo, champiñones y parmesano.</p>
+                            <a class="text-link" href="#receta-semanal" data-show-recipe>Ver receta</a>
                         </div>
                     </article>
 
@@ -124,6 +126,21 @@
                             <p class="story__description">
                                 Cómo conseguir un buen sellado en una sartén sin cocer la carne al vapor.
                             </p>
+                            <details class="details">
+                                <summary>Aprender técnica</summary>
+                                <div class="details__body">
+                                    <ol>
+                                        <li>Seca la carne con papel absorbente para eliminar la humedad superficial.</li>
+                                        <li>Precalienta la sartén a fuego medio-alto y añade el aceite sin dejarlo humear intensamente.</li>
+                                        <li>Coloca la carne dejando espacio entre los cortes para que no se acumule vapor.</li>
+                                        <li>Deja que se forme la costra antes de moverla; el tiempo depende del grosor y del corte.</li>
+                                        <li>Voltea con pinzas y sella el otro lado.</li>
+                                        <li>Si quieres, añade mantequilla, ajo y romero; controla la temperatura interna con un termómetro.</li>
+                                        <li>Deja reposar la carne unos minutos antes de cortarla.</li>
+                                    </ol>
+                                    <p>Sellar no retiene los jugos: el dorado desarrolla sabor y textura. Para seguridad alimentaria, respeta las temperaturas internas recomendadas para cada preparación.</p>
+                                </div>
+                            </details>
                         </div>
                     </article>
 
@@ -141,6 +158,14 @@
                             <p class="story__description">
                                 Preparar cinco platos diferentes con un presupuesto limitado.
                             </p>
+                            <details class="details">
+                                <summary>Seguir reto</summary>
+                                <div class="details__body">
+                                    <p>El reto: preparar cinco platos, compartir ingredientes y evitar desperdicios con un máximo de $60.000 COP.</p>
+                                    <p>Presupuesto ficticio: $54.500 COP estimados de compra y $5.500 COP restantes.</p>
+                                    <a class="text-link" href="#recetas">Explorar los platos del reto</a>
+                                </div>
+                            </details>
                         </div>
                     </article>
 
@@ -158,9 +183,131 @@
                             <p class="story__description">
                                 Primera receta conseguida correctamente después de varios intentos.
                             </p>
+                            <details class="details">
+                                <summary>Conocer mi historia</summary>
+                                <div class="details__body">
+                                    <p>Después de varios intentos conseguí una salsa suave y champiñones dorados. Aprendí a controlar el fuego, incorporar el parmesano al final y ajustar la salsa poco a poco con agua de cocción.</p>
+                                </div>
+                            </details>
                         </div>
                     </article>
                 </div>
+            </section>
+
+            <!-- Recipes -->
+            <section class="recipes" id="recetas" aria-labelledby="recipes-title">
+                <div class="section-heading">
+                    <h2 class="section-heading__title" id="recipes-title">Explorar recetas</h2>
+                    <p class="section-heading__intro">Una receta de la semana y cinco platos planificados para el reto.</p>
+                </div>
+                <div class="filters" aria-label="Filtrar recetas" hidden>
+                    <button class="filters__button" type="button" data-filter="todas" aria-pressed="true">Todas</button>
+                    <button class="filters__button" type="button" data-filter="pastas" aria-pressed="false">Pastas</button>
+                    <button class="filters__button" type="button" data-filter="arroces" aria-pressed="false">Arroces</button>
+                    <button class="filters__button" type="button" data-filter="legumbres" aria-pressed="false">Legumbres</button>
+                    <button class="filters__button" type="button" data-filter="huevos" aria-pressed="false">Huevos</button>
+                </div>
+                <p class="recipes__status" aria-live="polite" data-filter-status></p>
+
+                <div class="recipes__list">
+                    <article class="recipe" id="receta-semanal" data-category="pastas">
+                        <div class="recipe__heading">
+                            <h3>Pasta cremosa con ajo, champiñones y parmesano</h3>
+                            <p>35 minutos · 2 porciones · Dificultad media</p>
+                        </div>
+                        <details class="details">
+                            <summary>Ver preparación e ingredientes</summary>
+                            <div class="details__body">
+                                <p>La clave es aprovechar el agua de cocción para conseguir una salsa sedosa.</p>
+                                <fieldset class="ingredients">
+                                    <legend>Ingredientes para 2 porciones</legend>
+                                    <p>Marca los ingredientes durante esta sesión.</p>
+                                    <label><input type="checkbox"> 200 g de pasta tipo fettuccine</label>
+                                    <label><input type="checkbox"> 200 g de champiñones frescos</label>
+                                    <label><input type="checkbox"> 3 dientes de ajo</label>
+                                    <label><input type="checkbox"> 150 ml de crema de leche</label>
+                                    <label><input type="checkbox"> 40 g de queso parmesano rallado</label>
+                                    <label><input type="checkbox"> 1 cucharada de mantequilla</label>
+                                    <label><input type="checkbox"> 1 cucharada de aceite de oliva</label>
+                                    <label><input type="checkbox"> ½ cucharadita de pimienta negra</label>
+                                    <label><input type="checkbox"> Sal al gusto</label>
+                                    <label><input type="checkbox"> 1 cucharada de perejil fresco picado</label>
+                                    <label><input type="checkbox"> ½ taza de agua de cocción de la pasta</label>
+                                </fieldset>
+                                <h4>Preparación</h4>
+                                <ol>
+                                    <li>Limpia y corta los champiñones; pica el ajo y reserva el perejil.</li>
+                                    <li>Cocina la pasta en agua con sal, retirándola un minuto antes de lo indicado. Reserva media taza de agua.</li>
+                                    <li>Dora los champiñones en una sartén amplia con el aceite y la mantequilla durante 5–7 minutos.</li>
+                                    <li>Reduce el fuego y remueve el ajo durante 30–45 segundos sin quemarlo.</li>
+                                    <li>Añade la crema, la pimienta y la sal; cocina a fuego bajo durante 3–4 minutos.</li>
+                                    <li>Incorpora la pasta, un poco del agua reservada y el parmesano; mezcla durante 1–2 minutos y ajusta la salsa con más agua si hace falta.</li>
+                                    <li>Retira del fuego, añade el perejil y sirve con más parmesano y pimienta al gusto.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </article>
+
+                    <article class="recipe" data-category="arroces">
+                        <div class="recipe__heading"><h3>Arroz con pollo y verduras</h3><p>Reto · Día 1 · Planificado</p></div>
+                        <details class="details"><summary>Ver preparación</summary><div class="details__body">
+                            <p>Ingredientes: arroz, pollo, zanahoria, cebolla, ajo y tomate.</p>
+                            <ol><li>Corta el pollo en cubos pequeños.</li><li>Sofríe cebolla, ajo y tomate.</li><li>Incorpora el pollo y cocina hasta que esté completamente cocido.</li><li>Añade zanahoria rallada y arroz lavado.</li><li>Agrega agua, tapa y cocina hasta que el arroz esté listo.</li></ol>
+                        </div></details>
+                    </article>
+
+                    <article class="recipe" data-category="legumbres">
+                        <div class="recipe__heading"><h3>Guiso de lentejas con papa</h3><p>Reto · Día 2 · Planificado</p></div>
+                        <details class="details"><summary>Ver preparación</summary><div class="details__body">
+                            <p>Ingredientes: lentejas, papa, zanahoria, tomate, cebolla y ajo.</p>
+                            <ol><li>Lava y revisa las lentejas; cocínalas hasta que comiencen a ablandarse.</li><li>Prepara un sofrito con tomate, cebolla y ajo.</li><li>Añade zanahoria y papa en cubos.</li><li>Incorpora el sofrito a las lentejas y cocina hasta que los ingredientes estén tiernos.</li></ol>
+                        </div></details>
+                    </article>
+
+                    <article class="recipe" data-category="pastas">
+                        <div class="recipe__heading"><h3>Pasta salteada con verduras</h3><p>Reto · Día 3 · Planificado</p></div>
+                        <details class="details"><summary>Ver preparación</summary><div class="details__body">
+                            <p>Ingredientes: pasta, tomate, cebolla, ajo, zanahoria y repollo.</p>
+                            <ol><li>Cocina la pasta en agua con sal.</li><li>Corta el repollo y ralla la zanahoria.</li><li>Sofríe el ajo y la cebolla; añade el tomate para formar una salsa ligera.</li><li>Incorpora las verduras y la pasta; mezcla a fuego medio durante unos minutos.</li></ol>
+                        </div></details>
+                    </article>
+
+                    <article class="recipe" data-category="huevos">
+                        <div class="recipe__heading"><h3>Tortilla de papa y cebolla</h3><p>Reto · Día 4 · Planificado</p></div>
+                        <details class="details"><summary>Ver preparación</summary><div class="details__body">
+                            <p>Ingredientes: huevos, papa, cebolla, ajo, aceite y sal.</p>
+                            <ol><li>Pela y corta las papas en láminas; cocínalas con aceite hasta que estén tiernas.</li><li>Añade cebolla y cocina hasta que se ablande.</li><li>Bate los huevos con sal y pimienta y mézclalos con las papas.</li><li>Cocina a fuego bajo y voltea cuidadosamente para dorar ambos lados.</li></ol>
+                        </div></details>
+                    </article>
+
+                    <article class="recipe" data-category="arroces">
+                        <div class="recipe__heading"><h3>Arroz salteado con huevo y vegetales</h3><p>Reto · Día 5 · Planificado</p></div>
+                        <details class="details"><summary>Ver preparación</summary><div class="details__body">
+                            <p>Ingredientes: arroz, huevos, zanahoria, repollo, cebolla, ajo y aceite.</p>
+                            <ol><li>Cocina el arroz con anticipación, enfríalo rápidamente y refrigéralo antes de reutilizarlo.</li><li>Bate y cocina los huevos; retíralos de la sartén.</li><li>Sofríe la cebolla, el ajo y las verduras.</li><li>Incorpora el arroz frío y mezcla a fuego alto.</li><li>Añade el huevo y saltea hasta que todo esté bien caliente.</li></ol>
+                        </div></details>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Timer -->
+            <section class="timer" aria-labelledby="timer-title">
+                <div class="timer__intro">
+                    <h2 id="timer-title">Un momento para cocinar</h2>
+                    <p>Usa el temporizador para acompañar tus preparaciones.</p>
+                </div>
+                <div class="timer__controls" data-timer hidden>
+                    <label for="timer-minutes">Minutos</label>
+                    <input id="timer-minutes" type="number" min="1" max="180" step="1" value="5" inputmode="numeric">
+                    <output class="timer__display" data-timer-display role="timer" aria-live="off" aria-label="Tiempo restante">05:00</output>
+                    <div class="timer__actions">
+                        <button type="button" data-timer-start>Iniciar</button>
+                        <button type="button" data-timer-pause disabled>Pausar</button>
+                        <button type="button" data-timer-reset>Reiniciar</button>
+                    </div>
+                    <p class="timer__status" data-timer-status role="status"></p>
+                </div>
+                <noscript><p>Activa JavaScript para usar el temporizador y los filtros.</p></noscript>
             </section>
 
             <footer class="footer">Nico en la Cocina</footer>
