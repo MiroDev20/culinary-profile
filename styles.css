@@ -1,0 +1,195 @@
+/* ==========================================================================
+   FONTS
+   ========================================================================== */
+
+@font-face {
+    font-family: "DM Sans";
+    src: url("public/fonts/DM_Sans/DMSans-VariableFont_opsz,wght.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DM Serif Display";
+    src: url("public/fonts/DM_Serif_Display/DMSerifDisplay-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+
+:root {
+    color-scheme: light;
+
+    --color-background: #f3ebd8;
+    --color-text: #292b27;
+    --color-accent: #52613a;
+    --color-divider: #c9cbb9;
+    --color-hover: #e5e6d3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family: "DM Sans", Arial, sans-serif;
+    line-height: 1.5;
+    color: var(--color-text);
+
+    background: var(--color-background);
+}
+
+::selection {
+    color: var(--color-background);
+
+    background: var(--color-accent);
+}
+
+.profile-page {
+    width: min(100% - 2.5rem, 32rem);
+    margin-inline: auto;
+    padding-block: 3rem 4rem;
+}
+
+/* ==========================================================================
+   PROFILE
+   ========================================================================== */
+
+.profile {
+    text-align: center;
+}
+
+.profile__image {
+    display: block;
+    width: 8.5rem;
+    height: 8.5rem;
+    margin: 0 auto 1.5rem;
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+.profile__name {
+    margin: 0;
+
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: clamp(2.2rem, 8vw, 3rem);
+    font-weight: 400;
+    line-height: 1.08;
+}
+
+.profile__author {
+    margin: 0.6rem 0 0;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+.profile__bio {
+    max-width: 27rem;
+    margin: 1.25rem auto 0;
+
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+.profile__call-to-action {
+    margin: 1.25rem 0 0;
+
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   LINKS
+   ========================================================================== */
+
+.links {
+    margin-top: 2.5rem;
+}
+
+.links__list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    border-top: 1px solid var(--color-divider);
+}
+
+.links__item {
+    border-bottom: 1px solid var(--color-divider);
+}
+
+.links__link {
+    display: grid;
+    grid-template-columns: 1.5rem minmax(0, 1fr) 1.5rem;
+    align-items: center;
+    gap: 1rem;
+    min-height: 4.5rem;
+    padding: 1rem 0.75rem;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: inherit;
+    text-decoration: none;
+
+    border-radius: 0.375rem;
+
+    transition: background-color 160ms ease-out;
+}
+
+.links__link:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+.links__icon,
+.links__action {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.links__action {
+    transition: transform 160ms ease-out;
+}
+
+@media (hover: hover) {
+    .links__link:hover {
+        background: var(--color-hover);
+    }
+
+    .links__link:hover .links__action {
+        transform: translate(0.125rem, -0.125rem);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .links__link,
+    .links__action {
+        transition: none;
+    }
+
+    .links__link:hover .links__action {
+        transform: none;
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (min-width: 48rem) {
+    .profile-page {
+        padding-block: 5rem 6rem;
+    }
+}
