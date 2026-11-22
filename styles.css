@@ -114,7 +114,7 @@ img {
 .profile__image {
     width: min(65%, 17rem);
     height: auto;
-    margin-left: auto;
+    margin-inline: auto;
 
     border-radius: 12rem 12rem 1rem 1rem;
 }
