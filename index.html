@@ -21,30 +21,32 @@
     <body>
         <main class="page">
             <!-- Profile -->
-            <header class="profile">
+            <header class="profile" id="top">
+                <a class="profile__brand" href="#top" aria-label="Nico en la Cocina, inicio">
+                    <svg class="profile__brand-icon" viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M9 15V12a7 7 0 0 1 14 0v3M7 16h18v5a9 9 0 0 1-18 0v-5ZM11 12v-2a5 5 0 0 1 10 0v2M16 3V1M12 4 11 2M20 4l1-2"/>
+                    </svg>
+                    <span>Nico en la Cocina</span>
+                </a>
                 <div class="profile__copy">
+                    <img
+                        class="profile__image"
+                        src="assets/images/profile/profile-picture.png"
+                        alt="Nicolás Herrera en su cocina"
+                        width="1244"
+                        height="1244"
+                    >
                     <h1 class="profile__name">Nicolás Herrera</h1>
-                    <p class="profile__author">Nico en la Cocina</p>
                     <p class="profile__bio">
                         Estudiante de gastronomía aprendiendo una receta a la vez.
                         Técnicas, experimentos y retos para cocinar mejor sin complicarse.
                     </p>
                     <p class="profile__invitation">¡Vamos a cocinar algo!</p>
                 </div>
-                <img
-                    class="profile__image"
-                    src="assets/images/profile/profile-cutout.png"
-                    alt="Nicolás Herrera"
-                    width="811"
-                    height="1247"
-                >
             </header>
 
             <!-- Links -->
-            <nav class="links" aria-labelledby="links-title">
-                <div class="section-heading">
-                    <h2 class="section-heading__title" id="links-title">Encuéntrame aquí</h2>
-                </div>
+            <nav class="links" aria-label="Enlaces principales">
                 <ul class="links__list">
                     <li class="links__item">
                         <a class="links__link" href="#">
